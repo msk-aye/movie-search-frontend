@@ -5,12 +5,11 @@ import { useState, useEffect } from 'react';
 import "ag-grid-community/styles/ag-grid.css"
 import "ag-grid-community/styles/ag-theme-balham.css"
 import 'bootstrap/dist/css/bootstrap.min.css';
-
-const API_URL = 'http://4.237.58.241:3000/movies/data/'
+import { API_URL } from "../config/api";
 
 const Moviee = (id) => {
   return (
-    fetch(`${API_URL}${id}`)
+    fetch(`${API_URL}/movies/data/${id}`)
       .then(res => res.json())
       .then(data => ({
           title: data.title,

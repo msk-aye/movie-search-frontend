@@ -3,8 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { Button, Input, Form, Row, Col } from "reactstrap";
 import 'bootstrap/dist/css/bootstrap.min.css';
-
-const API_URL = `http://4.237.58.241:3000/movies/data/`;
+import { API_URL } from "../config/api";
 
 const featured = ['tt0120915', 'tt0121765', 'tt0121766',
                   'tt4633694', 'tt0361748', 'tt2788710',
@@ -77,7 +76,7 @@ function Featured() {
 
     Promise.all(
       featuredIDs.map(id =>
-        fetch(`${API_URL}${id}`)
+        fetch(`${API_URL}/movies/data/${id}`)
           .then(res => res.json())
           .then(data => ({
             heading: data.title || 'Untitled',

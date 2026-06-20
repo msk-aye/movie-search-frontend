@@ -2,6 +2,15 @@
 
 Simple frontend for movie finder webapp. Supports movie search and checking information of movies and actors within the movies. Also supports logging in and authentication of users using JSON web tokens.
 
+## Production setup
+
+1. Copy [.env.example](.env.example) to `.env.local` or `.env.production` and keep `VITE_API_URL=/api` for production.
+2. Run `npm ci`.
+3. Build with `npm run build`.
+4. Serve the `dist/` folder with nginx or another static server that falls back to `index.html` for SPA routes.
+
+For local development, keep `VITE_DEV_API_TARGET=http://127.0.0.1:3000` so Vite proxies `/api` to the backend.
+
 <img width="944" height="473" alt="image" src="https://github.com/user-attachments/assets/e3f17f86-447b-412e-baee-1a6a5fa762ea" />
 
 <img width="944" height="458" alt="image" src="https://github.com/user-attachments/assets/543460ae-d6a1-4f09-911d-1013e9f8003c" />

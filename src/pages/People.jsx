@@ -15,8 +15,7 @@ import { useState, useEffect } from 'react';
 import "ag-grid-community/styles/ag-grid.css"
 import "ag-grid-community/styles/ag-theme-balham.css"
 import 'bootstrap/dist/css/bootstrap.min.css';
-
-const API_URL = `http://4.237.58.241:3000`;
+import { API_URL } from "../config/api";
 
 const getAccessToken = async () => {
   const tokenExpiry = localStorage.getItem("tokenExpiry");

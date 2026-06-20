@@ -5,8 +5,7 @@ import { useNavigate, useSearchParams} from "react-router-dom";
 import "ag-grid-community/styles/ag-grid.css"
 import "ag-grid-community/styles/ag-theme-quartz.css"
 import 'bootstrap/dist/css/bootstrap.min.css';
-
-const API_URL = "http://4.237.58.241:3000/movies/search?"
+import { API_URL } from "../config/api";
 
 const SearchBar = () => {
   const [title, setTitle] = useState('');
@@ -87,7 +86,7 @@ export default function Movies() {
       if (year & year !== 'all') params.append('year', year);
       if (page) params.append('page', page);
 
-      fetch(`${API_URL}${params.toString()}`)
+      fetch(`${API_URL}/movies/search?${params.toString()}`)
         .then(res => res.json())
         .then(json => {
           if (json.error) {

@@ -2,8 +2,7 @@ import { Button, Input, Form, FormGroup, FormFeedback, Row, Col } from "reactstr
 import { useState } from 'react';
 import { useNavigate } from "react-router-dom";
 import 'bootstrap/dist/css/bootstrap.min.css';
-
-const API_URL = `http://4.237.58.241:3000`;
+import { API_URL } from "../config/api";
 
 export default function Register() {
   const [username, setUsername] = useState("");

@@ -7,8 +7,7 @@ import {
   DropdownItem,
   Button
 } from 'reactstrap';
-
-const API_URL = `http://4.237.58.241:3000`;
+import { API_URL } from "../config/api";
 
 const Dropdown = ({ token, onLogout }) => {
   if (token) {
